@@ -7,4 +7,4 @@
 
 
 # matlab command  
-set(gcf,'position',[200,200,1000,800]); 
+set(gcf,'position',[200,200,1000,800]); 默认宽为1000，高为800，此命令适用于4张图

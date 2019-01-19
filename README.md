@@ -5,6 +5,7 @@
 指定显卡：CUDA_VISIBLE_DEVICES=0    python  your_file.py  
 挂起进程：nohup /root/start.sh > output.txt &  
 挂起进程训练模型：CUDA_VISIBLE_DEVICES=1 nohup python networkTraining.py Config.ini 0 > 1_19_training.txt &    
+利用训练好的权重分割: CUDA_VISIBLE_DEVICES=1 nohup python networkSegmentation.py FCN_Segmentation.ini.ini 0 > 1_19_training.txt &  
 
 
 # nii图片处理

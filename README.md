@@ -1,11 +1,34 @@
 # routine-command  
-存放常用linux命令  
-
+常用linux命令  
 查看当前登录用户：w  
 查看显卡使用情况：nvidia-smi  
 指定显卡：CUDA_VISIBLE_DEVICES=0    python  your_file.py  
 挂起进程：nohup /root/start.sh > output.txt &  
 挂起进程训练模型：CUDA_VISIBLE_DEVICES=1 nohup python networkTraining.py Config.ini 0 > 1_19_training.txt &    
+
+
+# nii图片处理
+# python
+import nibabel as nib  
+import numpy as np  
+np.shape(ni.load('file.nii').get_data())--> result: (320,320,240) from 'dengyixin.nii'   
+oriImage = nib.load('file.nii')  
+gtImage = nib.load('gt_file.nii')  
+changedGtImage = nib.Nifti1Image(gtImage.get_data(), orgImage.affine)  
+nib.save(changedGtImage,'gt_file_changed.nii')  
+# matlab
+导入NIfTI_20140122包  
+imagePath = 'D:\plaque\code\Training_data_p\imagesFolder\';  
+gtPath = 'D:\plaque\code\Training_data_p\GroundTruthFolder\';  
+imageName = [imagePath, 'mahanquan.nii']  
+gtName = [gtPath, 'mahanquanp.nii']  
+gtImage = load_untouch_nii(gtName);  
+gtData = gtImage.img;  
+gtData = gtData(:,end:-1:1,:);  
+% gtData = gtData(:,:,end:-1:1);  
+changeGt = make_nii(gtData, [], [], 4);  
+save_nii(changeGt, [gtPath, 'mahanquanp-change.nii']);  
+
 
 # basic operation  
 查看隐藏文件：ls -la  

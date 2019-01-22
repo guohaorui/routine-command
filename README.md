@@ -28,7 +28,9 @@ gtData = gtImage.img;
 gtData = gtData(:,end:-1:1,:);  
 % gtData = gtData(:,:,end:-1:1);  
 changeGt = make_nii(gtData, [], [], 4);  
+% 第二个参数是voxel_size， 不填默认是[1 1 1]， 导致最后保存的图片的affine固定
 save_nii(changeGt, [gtPath, 'mahanquanp-change.nii']);  
+
 
 
 # basic operation  
@@ -39,7 +41,7 @@ save_nii(changeGt, [gtPath, 'mahanquanp-change.nii']);
 
 # matlab command  
 set(gcf,'position',[200,200,500,400]); 一张图片最佳宽为500，高为400
-
+findstr('.nii',fileprefix) 找到'.nii'在fileprefix中的第一个索引值
 
 # git command  
 Git初始化：

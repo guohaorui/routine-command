@@ -38,6 +38,9 @@ save_nii(changeGt, [gtPath, 'mahanquanp-change.nii']);
 创建文件：touch file
 修改文件：echo "test" >> file
 查看文件夹大小：du -h 路径
+从服务器下载整个目录： scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录）  
+上传目录到服务器: scp  -r local_dir username@servername:remote_dir  
+删除文件夹： rm -rf dir (-r recursive -f直接强制删除不作提示)  
 
 # matlab command  
 set(gcf,'position',[200,200,500,400]); 一张图片最佳宽为500，高为400

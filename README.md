@@ -29,7 +29,15 @@ gtData = gtData(:,end:-1:1,:);
 % gtData = gtData(:,:,end:-1:1);  
 changeGt = make_nii(gtData, [], [], 4);  
 % 第二个参数是voxel_size， 不填默认是[1 1 1]， 导致最后保存的图片的affine固定  
-save_nii(changeGt, [gtPath, 'mahanquanp-change.nii']);  
+save_nii(changeGt, [gtPath, 'mahanquanp-change.nii']);
+
+低通滤波器:
+fs=8000;  
+[b, a]=butter(2,400/(fs/2));  
+[h,f]=freqz(b,a,512,fs);  
+频域分析：  
+
+
 
 
 

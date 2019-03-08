@@ -1,0 +1,27 @@
+% funciton: generate the fft and relating horizontal ordinate 
+function [output,fx] = guohaorui_FFT(input,varargin)
+% params: input vector, points, fs, display
+    params = length(varargin);
+    % default value setting
+    points = 512;
+    fs = 8000;
+    display = true;
+    if params == 1
+        points = varargin{1};
+    end
+    if params == 2
+       fs = varargin{2}; 
+    end
+    if params == 3
+        display = varargin{3};
+    end
+    output = fftshift(fft(input,points));
+    fx = -fs/2:fs/(points-1):fs/2;
+    if display
+       plot(fx,output);
+       xlabel('frequency');
+       ylabel('magnitude');
+    end
+    
+end
+

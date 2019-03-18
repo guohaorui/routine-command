@@ -52,7 +52,8 @@ fs=8000;
 
 # matlab command  
 set(gcf,'position',[200,200,500,400]); 一张图片最佳宽为500，高为400
-findstr('.nii',fileprefix) 找到'.nii'在fileprefix中的第一个索引值
+findstr('.nii',fileprefix) 找到'.nii'在fileprefix中的第一个索引值  
+bwperim函数能把二值化图像的轮廓找出来  
 
 # git command  
 Git初始化：

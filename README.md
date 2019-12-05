@@ -69,3 +69,6 @@ git status
 git add file  
 使用git commit 提交修改, 文件会被提交到本地仓库  
 git commit -m "add file"--> -m添加comment
+
+# Anaconda
+conda install -c conda-forge louvain
